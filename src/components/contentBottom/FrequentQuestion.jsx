@@ -14,11 +14,11 @@ const FrequentQuestion = () => {
   };
 
   return (
-    <div className="mt-20 mb-[100px]">
-      <h1 className="text-workText text-center font-extrabold text-[40px] leading-[40px]  mb-4">
+    <div className="mt-10 sm:mt-14 md:mt-20 mb-12 sm:mb-16 md:mb-[100px]">
+      <h1 className="text-workText text-center font-extrabold text-[26px] sm:text-[34px] lg:text-[40px] leading-[32px] sm:leading-[40px] mb-4">
         Frequently Asked Question (FAQ)
       </h1>
-      <p className="text-blackNav text-center mb-10">
+      <p className="text-blackNav text-center mb-8 sm:mb-10 px-2">
         Enhance posture, mobility, and well-being effortlessly with Posture Pro.
         Achieve proper alignment, reduce <br /> pain, and strengthen your body
         with ease!
@@ -32,7 +32,7 @@ const FrequentQuestion = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        className=" w-[1062px] mx-auto "
+        className="w-full max-w-[1062px] mx-auto px-3 md:px-5 cw:px-0"
       >
         {faqs.map((item) => (
           <div
@@ -50,13 +50,15 @@ const FrequentQuestion = () => {
                   ? "bg-faqAnswerbg rounded-sm border-none"
                   : "bg-white"
               }  border border-borderOne py-5 px-6  rounded-sm  cursor-pointer  flex 
-            justify-between`}
+            justify-between gap-4`}
             >
-              <h1 className="shortTitle ">{item?.question}</h1>{" "}
+              <h1 className="shortTitle flex-1 leading-snug">
+                {item?.question}
+              </h1>{" "}
               {item?.id === currentId ? (
-                <Minus className="3xs:w-[40px] " />
+                <Minus className="w-6 h-6 sm:w-7 sm:h-7" />
               ) : (
-                <Plus className="3xs:w-[40px] " />
+                <Plus className="w-6 h-6 sm:w-7 sm:h-7" />
               )}
             </div>
 
@@ -74,8 +76,10 @@ const FrequentQuestion = () => {
           </div>
         ))}
 
-        <div className="flex justify-center   items-center mt-10 ">
-          <button className="navBeRider">See More FAQ’s</button>
+        <div className="flex flex-col xs:flex-row justify-center items-center mt-10 gap-3 xs:gap-0">
+          <button className="navBeRider w-full xs:w-auto">
+            See More FAQ’s
+          </button>
           <button className="cursor-pointer bg-navArrow rounded-full w-[56px] h-[56px] flex items-center justify-center">
             <svg
               className=""

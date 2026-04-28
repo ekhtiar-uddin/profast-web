@@ -6,7 +6,7 @@ const RiderForm = () => {
   };
   return (
     <form action="">
-      <div className="flex gap-5">
+      <div className="grid grid-cols-1 xs:grid-cols-2 gap-5">
         <div>
           <h3 className="formLevel">Your Name</h3>
           <input
@@ -24,7 +24,7 @@ const RiderForm = () => {
           />
         </div>
       </div>
-      <div className="flex gap-5">
+      <div className="grid grid-cols-1 xs:grid-cols-2 gap-5">
         <div>
           <h3 className="formLevel">Your Email</h3>
           <input
@@ -36,18 +36,18 @@ const RiderForm = () => {
 
         <div>
           <h3 className="formLevel">Your Region</h3>
-          <div className="flex items-center ">
+          <div className="relative">
             <input
               type="text"
               placeholder="Select your region"
-              className="riderFormInput mb-0"
+              className="riderFormInput mb-0 pr-10"
             />
 
-            <ChevronDown className=" ml-[-30px]" />
+            <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2" />
           </div>
         </div>
       </div>
-      <div className="flex gap-5">
+      <div className="grid grid-cols-1 xs:grid-cols-2 gap-5">
         <div>
           <h3 className="formLevel">NID No</h3>
           <input type="text" placeholder="NID" className="riderFormInput" />

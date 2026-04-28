@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { testimonials } from "./customers.constants";
 import customerTop from "/src/assets/customer-top.png";
 import arrowleft from "/src/assets/customers/arrow-left.svg";
@@ -9,6 +9,7 @@ import ellipseSix from "/src/assets/customers/Ellipse 6.svg";
 import reviewQuote from "/src/assets/reviewQuote.png";
 const ContentBottom = () => {
   const [currentIndex, setCurrentIndex] = useState(0); // start from first item
+  const [visibleCount, setVisibleCount] = useState(5);
 
   const totalItems = testimonials.length;
 
@@ -24,10 +25,32 @@ const ContentBottom = () => {
     setCurrentIndex(index);
   };
 
-  // Get 5 items for visible window
+  useEffect(() => {
+    const updateVisibleCount = () => {
+      const width = window.innerWidth;
+
+      // Breakpoints from theme:
+      // 3xs:328, 2xs:410, xs:512, sm:640, 2sm:704, md:768, 2md:832, lg:1024
+      if (width >= 1024) setVisibleCount(5);
+      else if (width >= 704) setVisibleCount(3);
+      else if (width >= 512) setVisibleCount(2);
+      else setVisibleCount(1);
+    };
+
+    updateVisibleCount();
+    window.addEventListener("resize", updateVisibleCount);
+    return () => window.removeEventListener("resize", updateVisibleCount);
+  }, []);
+
+  const activeCardIndex = useMemo(
+    () => Math.floor(visibleCount / 2),
+    [visibleCount],
+  );
+
+  // Get visible items for current window
   const getVisibleTestimonials = () => {
     const visible = [];
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < visibleCount; i++) {
       visible.push(testimonials[(currentIndex + i) % totalItems]);
     }
     return visible;
@@ -44,14 +67,16 @@ const ContentBottom = () => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
-      className="mt-[100px]"
+      className="mt-12 sm:mt-16 md:mt-20 lg:mt-[100px]"
     >
       <div className="max-w-max mx-auto">
         <img loading="lazy" src={customerTop} alt="" />
       </div>
       {/* What our customers are sayings */}
       <div>
-        <h1 className="mainTitle">What our customers are sayings</h1>
+        <h1 className="mainTitle text-[26px] sm:text-[34px] lg:text-[40px] leading-[32px] sm:leading-[40px]">
+          What our customers are sayings
+        </h1>
         <p className="commonDescription">
           Enhance posture, mobility, and well-being effortlessly with Posture
           Pro. Achieve proper alignment, reduce <br /> pain, and strengthen your
@@ -59,16 +84,20 @@ const ContentBottom = () => {
         </p>
 
         <div
-          className="mt-10 grid grid-cols-5 gap-6 mx-[-260px] transition-transform duration-500 ease-in-out "
+          className="mt-8 sm:mt-10 grid grid-cols-1 xs:grid-cols-2 2sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 mx-0 cw:mx-[-260px] transition-transform duration-500 ease-in-out"
           style={{
-            transform: `translateX(-${(100 / 5) * 0}%)`,
+            transform: `translateX(-${(100 / visibleCount) * 0}%)`,
           }}
         >
           {visibleTestimonials.map((testimonial, idx) => (
             <div
               key={testimonial?.id}
-              className={`p-8 bg-white rounded-3xl transition-all duration-500 ${
-                idx === 2 ? "max-h-max opacity-100 " : "mt-[50px] opacity-30"
+              className={`p-5 sm:p-6 lg:p-8 bg-white rounded-3xl transition-all duration-500 ${
+                idx === activeCardIndex
+                  ? "max-h-max opacity-100"
+                  : visibleCount === 1
+                    ? "opacity-100"
+                    : "mt-6 sm:mt-[50px] opacity-30"
               }`}
             >
               <img loading="lazy" src={reviewQuote} alt="" />
@@ -104,7 +133,7 @@ const ContentBottom = () => {
                 </div>
 
                 <div>
-                  <h4 className="text-[20px] font-extrabold text-workText">
+                  <h4 className="text-[18px] sm:text-[20px] font-extrabold text-workText">
                     {testimonial?.customerName}
                   </h4>
                   <h4 className="mt2 text-workDesc font-medium">
@@ -116,7 +145,7 @@ const ContentBottom = () => {
           ))}
         </div>
 
-        <div className="mb-[128px]  mt-[-20px] flex gap-8 items-center justify-center">
+        <div className="mb-12 sm:mb-16 md:mb-[128px] mt-6 md:mt-[-20px] flex gap-6 sm:gap-8 items-center justify-center">
           <div
             className="w-10 h-10 hover:shadow-lg cursor-pointer rounded-full bg-white flex justify-center items-center hover:bg-gray-50 transition-colors "
             onClick={prevSlide}
@@ -124,7 +153,7 @@ const ContentBottom = () => {
             <img loading="lazy" src={arrowleft} alt="" />
           </div>
 
-          <div className="flex gap-2 items-center">
+          <div className="flex flex-wrap justify-center gap-2 items-center max-w-[90vw]">
             {testimonials?.map((_, idx) => (
               <img
                 loading="lazy"

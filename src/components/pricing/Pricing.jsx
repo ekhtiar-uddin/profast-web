@@ -9,7 +9,7 @@ const Pricing = () => {
         Our maximum is their minimum — unlimited units for unlimited value.
       </p>
 
-      <div className="flex items-center gap-3 justify-center mt-3 mb-16">
+      <div className="flex flex-wrap items-center gap-3 justify-center mt-3 mb-10 sm:mb-16 px-2">
         <p className="text-navArrow font-semibold">Monthly</p>
         <div className=" ">
           <div className="text-sm font-Inter  font-medium transition-all duration-300 pl-4  rounded-full bg-workText text-white ">
@@ -18,7 +18,9 @@ const Pricing = () => {
         </div>
         <p className=" text-center  font-semibold  ">
           Yearly{" "}
-          <span className="text-workDesc font-medium">(one month free)</span>{" "}
+          <span className="text-workDesc font-medium">
+            (one month free)
+          </span>{" "}
         </p>
       </div>
 
@@ -30,7 +32,7 @@ const Pricing = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        className="grid md:grid-cols-4 grid-cols-1 gap-5 w-[1062px] mx-auto "
+        className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4 gap-5 w-full max-w-[1062px] mx-auto"
       >
         {pricingPlans?.map((plan, index) => (
           <div

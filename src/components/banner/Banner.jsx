@@ -39,7 +39,7 @@ const Banner = () => {
       div
       className="customWidth mt-[60px]  relative"
     >
-      <Carousel className="w-full ">
+      <Carousel className=" w-full ">
         <CarouselContent>
           {banners.map((banner, index) => (
             <CarouselItem key={index} className="">
@@ -57,8 +57,8 @@ const Banner = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="bg-navArrow cursor-pointer ml-[50px]     text-p1" />
-        <CarouselNext className="cursor-pointer mr-[50px]  bg-[#03464D]  font-bold   text-white" />
+        <CarouselPrevious className="bg-navArrow cursor-pointer text-p1 bottom-3 right-16 size-10 [&>svg]:!w-5 [&>svg]:!h-5 sm:bottom-[50px] sm:right-30 sm:size-14 sm:[&>svg]:!w-6 sm:[&>svg]:!h-6 sm:ml-[50px]" />
+        <CarouselNext className="cursor-pointer bg-[#03464D] font-bold text-white bottom-3 right-3 size-10 [&>svg]:!w-5 [&>svg]:!h-5 sm:bottom-[50px] sm:right-0 sm:size-14 sm:[&>svg]:!w-6 sm:[&>svg]:!h-6 sm:mr-[50px]" />
       </Carousel>
     </motion.div>
   );

@@ -13,7 +13,7 @@ const Banner = lazy(() => import("./components/banner/Banner"));
 
 function App() {
   return (
-    <section>
+    <section className="cw:px-2 md:px-5 px-3">
       <Suspense
         fallback={
           <div className="h-[110vh]  flex justify-center items-center">

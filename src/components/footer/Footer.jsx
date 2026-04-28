@@ -14,16 +14,16 @@ const Footer = () => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
-      className="bg-footerbg mb-[50px] py-20 rounded-4xl customWidth"
+      className="bg-footerbg mb-8 sm:mb-[50px] py-10 sm:py-14 lg:py-20 rounded-2xl sm:rounded-3xl lg:rounded-4xl customWidth"
     >
       <div className="flex items-end justify-center">
         <div className="">
-          <img src={logo} alt="" />
+          <img className="w-10 sm:w-auto" src={logo} alt="" />
         </div>
 
         <div className=" ">
           <h3
-            className="text-[32px] ml-[-16px] leading-[24px]   font-extrabold text-white
+            className="text-[28px] sm:text-[32px] ml-[-16px] leading-[24px] font-extrabold text-white
              "
           >
             Profast
@@ -31,10 +31,10 @@ const Footer = () => {
         </div>
       </div>
 
-      <p className="text-borderOne text-center mt-4">
+      <p className="text-borderOne text-center mt-4 px-2">
         Enjoy fast, reliable parcel delivery with real-time tracking and zero
-        hassle. From personal packages to <br /> business shipments — we deliver
-        on time, every time.
+        hassle. From personal packages to <br className="hidden sm:block" />
+        business shipments — we deliver on time, every time.
       </p>
 
       <div className="mt-8 shortWidth">
@@ -50,7 +50,7 @@ const Footer = () => {
           />
         </svg>
         <div className=" my-8">
-          <ul className="flex footerIcons justify-center gap-9 navList">
+          <ul className="flex flex-wrap footerIcons justify-center gap-x-6 gap-y-3 sm:gap-9 navList px-2">
             <li>Services</li>
             <li>Coverage</li>
             <li>About Us</li>
@@ -74,7 +74,7 @@ const Footer = () => {
       </div>
 
       {/*  social icons */}
-      <div className="flex justify-center gap-6 mt-8 items-center">
+      <div className="flex flex-wrap justify-center gap-6 mt-8 items-center">
         <div>
           <img loading="lazy" src={socialOne} alt="" />
         </div>

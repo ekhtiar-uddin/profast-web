@@ -13,32 +13,10 @@ import startPeople from "/src/assets/brands/start-people 1.png";
 import start from "/src/assets/brands/start.png";
 const ContentTop = () => {
   return (
-    <section className="mt-[60px] ">
-      {/*  Integrated with the apps you love*/}
-      {/* <section className="shortWidth py-16 text-white bg-workText rounded-4xl">
-        <div>
-          <h1 className="mainTitle text-white">
-            Integrated with the apps you love
-          </h1>
-          <p className="commonDescription text-white">
-            Stay connected with 10+ third-party integrations including Google
-            Calendar, Zapier, Stripe, <br /> RentRange, QuickBooks Online,
-            Tenant Turner, and more.{" "}
-          </p>
-
-          <img className="w-[800px] mx-auto" src={apps} alt="" />
-        </div>
-      </section> */}
-
-      {/* <section>
-        <h1>
-          Plus, everything else you’d expect on our highly <br /> rated platform
-        </h1>
-      </section> */}
-
+    <section className="mt-10 sm:mt-[60px] ">
       {/* works */}
-      <section className="mb-[100px] shortWidth">
-        <h1 className="text-workText mb-8 text-[32px] font-extrabold">
+      <section className="mb-12 sm:mb-16 md:mb-20 lg:mb-[100px] shortWidth">
+        <h1 className="text-workText mb-6 sm:mb-8 text-[24px] sm:text-[28px] md:text-[32px] font-extrabold">
           How it Works
         </h1>
 
@@ -50,12 +28,12 @@ const ContentTop = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          className="grid grid-cols-4 gap-6"
+          className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
         >
           {works?.map((work) => (
             <motion.div
               key={work?.id}
-              className="p-8 rounded-3xl "
+              className="p-5 sm:p-6 lg:p-8 rounded-3xl "
               style={{ backgroundColor: work?.workBg }}
             >
               <div
@@ -95,9 +73,9 @@ const ContentTop = () => {
 
       <section
         id="services"
-        className=" bg-workText rounded-4xl customWidth    py-[100px] px-[160px]  "
+        className="bg-workText rounded-2xl sm:rounded-3xl lg:rounded-4xl customWidth py-12 sm:py-16 lg:py-20 cw:py-[100px] px-4 xs:px-6 md:px-10 lg:px-16 cw:px-[160px]"
       >
-        <h1 className="text-center text-white   text-[40px] font-extrabold ">
+        <h1 className="text-center text-white text-[28px] sm:text-[34px] lg:text-[40px] font-extrabold">
           Our Services
         </h1>
 
@@ -115,7 +93,7 @@ const ContentTop = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          className="grid grid-cols-3 gap-6"
+          className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
         >
           {services?.map((service) => (
             <div
@@ -144,9 +122,9 @@ const ContentTop = () => {
       </section>
 
       {/* We've helped thousands of sales teams */}
-      <section className="mt-[100px] shortWidth">
+      <section className="mt-12 sm:mt-16 md:mt-[100px] shortWidth">
         <h1
-          className="mb-[40px] text-workText font-extrabold text-[28px] text-center
+          className="mb-8 sm:mb-[40px] text-workText font-extrabold text-[20px] sm:text-[24px] md:text-[28px] text-center
         "
         >
           We've helped thousands of sales teams
@@ -160,8 +138,7 @@ const ContentTop = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          className="flex justify-between w-full
-          pb-[102px] "
+          className="flex flex-wrap justify-center 2sm:justify-between gap-6 sm:gap-8 w-full pb-12 sm:pb-16 md:pb-[102px]"
         >
           <div>
             <img loading="lazy" src={casio} alt="Casio" />
@@ -214,18 +191,18 @@ const ContentTop = () => {
           {priorities?.map((priority) => (
             <div
               key={priority?.id}
-              className="bg-white rounded-3xl flex gap-12 p-8"
+              className="bg-white rounded-3xl flex flex-col md:flex-row gap-6 md:gap-12 p-5 sm:p-6 lg:p-8"
             >
-              <div className="flex gap-12">
+              <div className="flex flex-col xs:flex-row gap-6 md:gap-12">
                 <div>
                   <img
                     loading="lazy"
-                    className={`${priority?.id === 3 ? " w-[150px]" : ""} `}
+                    className={`${priority?.id === 3 ? " w-[150px]" : ""} max-w-full`}
                     src={priority?.img}
                     alt=""
                   />
                 </div>
-                <div className="">
+                <div className="hidden md:block">
                   <svg width="1" height="100%" className="block">
                     <line
                       x1="1"
@@ -241,7 +218,7 @@ const ContentTop = () => {
               </div>
 
               <div>
-                <h3 className="text-[24px]  mt-4 font-bold text-workText">
+                <h3 className="text-[20px] sm:text-[22px] lg:text-[24px] mt-1 md:mt-4 font-bold text-workText">
                   {priority?.title}
                 </h3>
                 <p className=" font-medium text-workDesc mt-4">
@@ -252,7 +229,7 @@ const ContentTop = () => {
           ))}
         </motion.div>
 
-        <div className="pt-[80px] mb-[80px]">
+        <div className="pt-10 sm:pt-14 md:pt-[80px] mb-10 sm:mb-14 md:mb-[80px]">
           <svg width="100%" height="1" className="block">
             <line
               x1="0"
@@ -278,14 +255,13 @@ const ContentTop = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          className="relative bg-workText rounded-4xl w-full p-20 flex justify-between gap-[73px]
-          "
+          className="relative bg-workText rounded-2xl sm:rounded-3xl lg:rounded-4xl w-full p-6 sm:p-10 lg:p-16 cw:p-20 flex flex-col lg:flex-row justify-between gap-8 lg:gap-[73px]"
         >
-          <div className="absolute top-0">
+          <div className="absolute top-0 hidden lg:block">
             <img loading="lazy" src={merchant} alt="" />
           </div>
-          <div className="w-[673px]">
-            <h1 className="text-[40px] font-extrabold text-white">
+          <div className="w-full lg:w-[673px]">
+            <h1 className="text-[26px] sm:text-[32px] lg:text-[40px] font-extrabold text-white">
               Merchant and Customer Satisfaction is Our First Priority
             </h1>
             <p className="text-borderOne mt-4">
@@ -293,17 +269,17 @@ const ContentTop = () => {
               with 100% safety of your product. Pathao courier delivers your
               parcels in every corner of Bangladesh right on time.
             </p>
-            <div className="flex gap-4 mt-8">
-              <button className="text-[20px] cursor-pointer rounded-full bg-p1 font-bold py-4 px-8 text-navArrow">
+            <div className="flex flex-col xs:flex-row gap-4 mt-8">
+              <button className="text-[16px] sm:text-[18px] lg:text-[20px] cursor-pointer rounded-full bg-p1 font-bold py-3 sm:py-4 px-6 sm:px-8 text-navArrow">
                 Become a Merchant
               </button>
-              <button className="text-[20px] cursor-pointer rounded-full text-p1 border-p1 border font-bold py-4 px-8 ">
+              <button className="text-[16px] sm:text-[18px] lg:text-[20px] cursor-pointer rounded-full text-p1 border-p1 border font-bold py-3 sm:py-4 px-6 sm:px-8 ">
                 Earn with Profast Courier
               </button>
             </div>
           </div>
 
-          <div className="absolute right-[46px]">
+          <div className="absolute right-[46px] hidden lg:block">
             <img
               loading="lazy"
               className=""
@@ -319,8 +295,8 @@ const ContentTop = () => {
 
       {/* Pick your industry and streamline your business workflow */}
 
-      <section id="coverage" className="mt-20 shortWidth">
-        <h1 className="mainTitle ">
+      <section id="coverage" className="mt-10 sm:mt-14 md:mt-20 shortWidth">
+        <h1 className="mainTitle text-[26px] sm:text-[34px] lg:text-[40px] leading-[32px] sm:leading-[40px]">
           Pick your industry and streamline your busines
         </h1>
 
@@ -337,7 +313,7 @@ const ContentTop = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          className="grid grid-cols-4 gap-6 "
+          className="grid grid-cols-1 2xs:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
         >
           {industries?.map((industry) => (
             <div
@@ -364,8 +340,8 @@ const ContentTop = () => {
       </section>
 
       {/* Ready to wow your customers? */}
-      <section className="bg-workText shortWidth px-20 rounded-4xl my-20 ">
-        <div className="flex  justify-between items-center py-20">
+      <section className="bg-workText shortWidth px-4 sm:px-8 lg:px-20 rounded-2xl sm:rounded-3xl lg:rounded-4xl my-10 sm:my-14 md:my-20">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 md:gap-10 py-10 sm:py-14 lg:py-20">
           <div className=" ">
             <h1 className="mainTitle mt-0 text-left text-white ">
               Ready to wow your customers?

@@ -14,17 +14,17 @@ const Register = () => {
   return (
     <section className=" font-Inter bg-white">
       {/* w-[1440px] mx-auto */}
-      <div className="   flex  justify-center gap-[211px]">
-        <div className="flex-1  pt-14 pl-14">
-          <div className="flex  gap-3 items-center  ">
+      <div className="flex flex-col lg:flex-row justify-center gap-10 2sm:gap-16 lg:gap-20 cw:gap-[211px]">
+        <div className="flex-1 pt-8 sm:pt-12 cw:pt-14 px-4 sm:px-8 cw:pl-14 cw:pr-0">
+          <div className="flex flex-wrap gap-3 items-center">
             <div className="flex items-end ">
               <div className="">
-                <img src={logo} alt="" />
+                <img className="w-10 sm:w-auto" src={logo} alt="" />
               </div>
 
               <div className=" ">
                 <h3
-                  className="text-[24px] ml-[-16px] leading-[24px]   font-extrabold text-blackOne
+                  className="text-[22px] sm:text-[24px] ml-[-16px] leading-[24px] font-extrabold text-blackOne
                  "
                 >
                   Profast
@@ -40,9 +40,9 @@ const Register = () => {
               </Link>
             </div>
           </div>
-          <div className="w-[400px] mr-16  mx-auto mt-[65px]">
+          <div className="w-full max-w-[400px] mx-auto mt-10 sm:mt-[65px] cw:mr-16">
             <form onSubmit={handleLogin} className=" rounded  ">
-              <h2 className=" text-[#000]     text-[42px]  font-extrabold ">
+              <h2 className="text-[#000] text-[32px] sm:text-[42px] font-extrabold">
                 Create an Account
               </h2>
 
@@ -98,7 +98,7 @@ const Register = () => {
                 Or
               </p>
             </form>
-            <div className="rounded-[6px] cursor-pointer w-full   justify-center flex items-center gap-2 mt-2  px-8 py-2 text-base border bg-[#E9ECF1]">
+            <div className="rounded-[6px] cursor-pointer w-full justify-center flex items-center gap-2 mt-2 px-4 sm:px-8 py-2 text-base border bg-[#E9ECF1]">
               <div className="flex items-center gap-2 text-[#000] font-medium">
                 <FcGoogle className="text-2xl"></FcGoogle>
                 Login with google
@@ -107,9 +107,9 @@ const Register = () => {
           </div>
         </div>
 
-        <div className="flex-1 w-[500px] bg-[#FAFDF0] h-screen  transition-all duration-500  flex justify-center items-center">
-          <div className=" ">
-            <img src={authImage} />
+        <div className="flex-1 w-full lg:w-[500px] cw:w-[500px] bg-[#FAFDF0] h-auto lg:h-screen cw:h-screen transition-all duration-500 flex justify-center items-center py-10 lg:py-0">
+          <div className="w-full flex justify-center px-4 sm:px-8">
+            <img className="w-full max-w-[520px]" src={authImage} alt="" />
           </div>
         </div>
       </div>

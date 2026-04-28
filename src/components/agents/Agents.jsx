@@ -8,7 +8,7 @@ import worker from "/src/assets/agent-pending.png";
 import deliveryman from "/src/assets/tiny-deliveryman.png";
 const Agents = () => {
   return (
-    <div className="mb-20">
+    <div className="mb-12 sm:mb-16 md:mb-20">
       {/* How Earning Works */}
 
       <motion.div
@@ -19,7 +19,7 @@ const Agents = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        className="customWidth  bg-white rounded-4xl flex justify-center items-center py-20 gap-20"
+        className="customWidth bg-white rounded-2xl sm:rounded-3xl lg:rounded-4xl flex flex-col lg:flex-row justify-center items-center py-10 sm:py-14 lg:py-20 gap-10 lg:gap-20 px-4 sm:px-8 cw:px-0"
       >
         <div>
           <div className="">
@@ -33,7 +33,7 @@ const Agents = () => {
             we deliver on time, every time.
           </p>
           <div id="beRider" className="flex items-center mt-8 ">
-            <button className="navBeRider w-[310px] rounded-full">
+            <button className="navBeRider w-[220px] xs:w-[260px] lg:w-[310px] rounded-full">
               Be a Rider
             </button>
             <button className="cursor-pointer bg-navArrow rounded-full w-[56px] h-[56px] flex items-center justify-center">
@@ -63,13 +63,18 @@ const Agents = () => {
           </div>
         </div>
 
-        <div>
-          <img loading="lazy" src={worker} alt="" />
+        <div className="w-full lg:w-auto">
+          <img
+            loading="lazy"
+            className="w-full max-w-[520px] mx-auto lg:mx-0"
+            src={worker}
+            alt=""
+          />
         </div>
       </motion.div>
 
       {/* Our Top Agents */}
-      <section id="about" className="w-[1283px] mx-auto mt-24">
+      <section id="about" className="shortWidth mt-12 sm:mt-16 md:mt-24">
         <h1 className="  mainTitle">Our Top Agents</h1>
         <p className="commonDescription">
           Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet
@@ -84,13 +89,13 @@ const Agents = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          className="grid grid-cols-4 gap-6 mt-12"
+          className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-8 sm:mt-12"
         >
           {agents?.map((agent) => (
             <div key={agent?.id} className="bg-white p-4 rounded-2xl">
               <img
                 loading="lazy"
-                className="h-[303px] w-[270px] rounded-xl"
+                className="h-[260px] xs:h-[280px] lg:h-[303px] w-full object-cover rounded-xl"
                 src={agent?.img}
                 alt=""
               />

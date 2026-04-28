@@ -10,15 +10,17 @@ const Extension = () => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
-      className="mt-20 flex justify-between gap-10 items-start shortWidth"
+      className="mt-10 sm:mt-14 md:mt-20 flex flex-col lg:flex-row justify-between gap-10 items-start shortWidth"
     >
       <div>
-        <h1 className="mainTitle text-left">60+ Premium Modules</h1>
+        <h1 className="mainTitle text-left text-[28px] sm:text-[36px] lg:text-[40px] leading-[32px] sm:leading-[40px]">
+          60+ Premium Modules
+        </h1>
         <p className="text-left  text-xl font-bold text-deepBlue mb-5">
           Customize Profast for your business
         </p>
 
-        <p className="w-[550px] text-left  commonDescription">
+        <p className="w-full max-w-[550px] text-left commonDescription">
           Innovation drives excellence! We offer comprehensive features that
           will streamline your operations and delight your customers.
           Customizable modules make it simple to tailor our platform for your
@@ -34,8 +36,12 @@ const Extension = () => {
         </button>
       </div>
 
-      <div>
-        <img className="w-[650px]" src={extensionBanner} alt="" />
+      <div className="w-full lg:w-auto">
+        <img
+          className="w-full max-w-[650px] mx-auto lg:mx-0"
+          src={extensionBanner}
+          alt=""
+        />
       </div>
     </motion.div>
   );
