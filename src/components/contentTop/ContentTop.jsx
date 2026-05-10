@@ -13,10 +13,10 @@ import startPeople from "/src/assets/brands/start-people 1.png";
 import start from "/src/assets/brands/start.png";
 const ContentTop = () => {
   return (
-    <section className="mt-10 sm:mt-[60px] ">
+    <section className="mt-4 md:mt-10 sm:mt-[60px] ">
       {/* works */}
       <section className="mb-12 sm:mb-16 md:mb-20 lg:mb-[100px] shortWidth">
-        <h1 className="text-workText mb-6 sm:mb-8 text-[24px] sm:text-[28px] md:text-[32px] font-extrabold">
+        <h1 className="text-workText mb-5 sm:mb-8 text-[24px] sm:text-[28px] md:text-[32px] font-extrabold">
           How it Works
         </h1>
 
@@ -33,35 +33,22 @@ const ContentTop = () => {
           {works?.map((work) => (
             <motion.div
               key={work?.id}
-              className="p-5 sm:p-6 lg:p-8 rounded-3xl "
-              style={{ backgroundColor: work?.workBg }}
+              className="group p-5 sm:p-6 lg:p-8 rounded-3xl bg-white hover:bg-[#26215f] cursor-pointer transition-all duration-300"
             >
-              <div
-                className={`${
-                  work?.id !== 3
-                    ? "bg-gradient-to-b from-[#EEEDFC] to-[#EEEDFC00]"
-                    : "bg-white"
-                }   rounded-sm max-w-max p-3`}
-              >
+              <div className="bg-gradient-to-b from-[#EEEDFC] to-[#EEEDFC00] group-hover:bg-white rounded-sm max-w-max p-3">
                 <img
                   loading="lazy"
-                  className="w-14 h-14 "
+                  className="w-14 h-14"
                   src={work?.img}
                   alt=""
                 />
               </div>
-              <h3
-                className={`${
-                  work?.id === 3 ? "text-white" : ""
-                }  text-[20px] mt-4 font-bold `}
-              >
+
+              <h3 className="text-[20px] mt-4 font-bold group-hover:text-white">
                 {work?.title}
               </h3>
-              <p
-                className={`${
-                  work?.id === 3 ? "text-white" : ""
-                }    font-medium  mt-4`}
-              >
+
+              <p className="font-medium mt-4 group-hover:text-white">
                 {work?.description}
               </p>
             </motion.div>
@@ -98,14 +85,12 @@ const ContentTop = () => {
           {services?.map((service) => (
             <div
               key={service?.id}
-              className={`${
-                service?.id === 2 ? "bg-p1" : "bg-white"
-              } p-8  rounded-3xl hover:bg-p1 transition-all duration-300`}
+              className="bg-white p-8 rounded-3xl hover:bg-p1 transition-all duration-300"
             >
-              <div className="bg-gradient-to-b from-[#EEEDFC] to-[#EEEDFC00] w-[88px] h-[88px] flex justify-center items-center  rounded-full mx-auto">
+              <div className="bg-gradient-to-b from-[#EEEDFC] to-[#EEEDFC00] w-[88px] h-[88px] flex justify-center items-center rounded-full mx-auto">
                 <img
                   loading="lazy"
-                  className={`  w-10 h-10`}
+                  className="w-10 h-10"
                   src={service?.img}
                   alt="sdf"
                 />

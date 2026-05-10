@@ -37,7 +37,7 @@ const Banner = () => {
         visible: { opacity: 1, y: 0 },
       }}
       div
-      className="customWidth mt-[60px]  relative"
+      className="customWidth mt-6 sm:mt-10  md:mt-[60px]  relative"
     >
       <Carousel className=" w-full ">
         <CarouselContent>

@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "commit": "git add . && git commit -m \" edited again \" && git push"
+    "commit": "git add . && git commit -m \" style: improve responsiveness and update styles \" && git push"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.3",

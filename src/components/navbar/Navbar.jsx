@@ -9,16 +9,16 @@ const Navbar = () => {
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
   return (
-    <div className=" relative z-50 py-[20px] mt-[32px] rounded-lg px-3 sm:px-4 md:px-[32px] customWidth bg-white flex justify-between items-center">
+    <div className=" relative z-50 py-[12px] md:py-[20px] mt-[32px] rounded-lg px-3 sm:px-4 md:px-[32px] customWidth bg-white flex justify-between items-center">
       <div>
         <div className="flex items-end ">
           <div className="">
-            <img className="w-10 sm:w-auto" src={logo} alt="" />
+            <img className="w-8 sm:w-auto" src={logo} alt="" />
           </div>
 
           <div className=" ">
             <h3
-              className="text-[28px] sm:text-[32px] ml-[-16px] leading-[24px]   font-extrabold text-blackOne
+              className="text-xl md:text-[28px] sm:text-[32px] ml-[-16px] leading-[24px]   font-extrabold text-blackOne
          "
             >
               Profast
@@ -94,7 +94,7 @@ const Navbar = () => {
           aria-label="Toggle navigation"
           aria-expanded={isMobileMenuOpen}
           onClick={() => setIsMobileMenuOpen((prev) => !prev)}
-          className="bg-navArrow rounded-full w-[48px] h-[48px] flex items-center justify-center"
+          className="bg-navArrow rounded-full w-[35px] h-[35px] md:w-[48px] md:h-[48px] flex items-center justify-center"
         >
           {isMobileMenuOpen ? (
             <svg
